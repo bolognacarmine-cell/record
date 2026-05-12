@@ -21,7 +21,7 @@ async function start() {
   configurePush(env);
 
   const app = createApp({ env });
-  const server = app.listen(env.port, () => {
+  const server = app.listen(env.port, "0.0.0.0", () => {
     process.stdout.write(`Listening on :${env.port}\n`);
   });
 
