@@ -1,63 +1,75 @@
-# Agenda Vocale Smart (PWA)
+# Nuxt Minimal Starter
 
-Monorepo con:
-- **frontend/**: Nuxt 3 mobile-first (PWA installabile su Android Chrome)
-- **backend/**: Node.js + Express (REST API) + MongoDB (Mongoose + GridFS per audio)
+Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-## Avvio locale
+## Setup
 
-1) Avvia MongoDB
+Make sure to install dependencies:
 
 ```bash
-docker compose up -d
-```
-
-2) Configura backend
-
-- Copia [backend/.env.example](file:///c:/Users/michele/Desktop/servizio/backend/.env.example) in `backend/.env`
-- Imposta almeno `JWT_SECRET`
-- (Opzionale) Imposta `OPENAI_API_KEY` per trascrizione + analisi avanzata
-- (Opzionale) Imposta VAPID per notifiche push
-
-3) Avvia backend
-
-```bash
-cd backend
-npm run dev
-```
-
-4) Configura e avvia frontend
-
-- Copia [frontend/.env.example](file:///c:/Users/michele/Desktop/servizio/frontend/.env.example) in `frontend/.env`
-
-```bash
-cd frontend
+# npm
 npm install
-npm run dev
+
+# pnpm
+pnpm install
+
+# yarn
+yarn install
+
+# bun
+bun install
 ```
 
-Frontend: http://localhost:3000  
-Backend: http://localhost:4000/api/health
+## Development Server
 
-## Notifiche (Reminder)
-
-Per abilitare notifiche push in PWA:
-
-1) Genera chiavi VAPID
+Start the development server on `http://localhost:3000`:
 
 ```bash
-cd backend
-npx web-push generate-vapid-keys
+# npm
+npm run dev
+
+# pnpm
+pnpm dev
+
+# yarn
+yarn dev
+
+# bun
+bun run dev
 ```
 
-2) Copia `publicKey` e `privateKey` in `backend/.env` come `VAPID_PUBLIC_KEY` e `VAPID_PRIVATE_KEY`.
+## Production
 
-3) Avvia backend + frontend e, dalla Dashboard, premi **Abilita** nella sezione notifiche.
+Build the application for production:
 
-## Deploy (struttura pronta)
+```bash
+# npm
+npm run build
 
-- Backend: Node (process manager o container) + MongoDB (managed o container)
-- Frontend: build SSR o statico (a seconda del target). Per PWA su Android, SSR va benissimo con hosting Node.
+# pnpm
+pnpm build
 
-"# record" 
-"# record" 
+# yarn
+yarn build
+
+# bun
+bun run build
+```
+
+Locally preview production build:
+
+```bash
+# npm
+npm run preview
+
+# pnpm
+pnpm preview
+
+# yarn
+yarn preview
+
+# bun
+bun run preview
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

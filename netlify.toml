@@ -1,0 +1,14 @@
+[build]
+  command = "npm install && npm run generate"
+  publish = ".output/public"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[context.production.environment]
+  NUXT_PUBLIC_API_BASE = "https://agenda-vocale-backend.onrender.com"  # Aggiornare con URL reale del backend

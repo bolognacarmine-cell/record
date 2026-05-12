@@ -1,19 +1,12 @@
 services:
   - type: web
-    name: agenda-vocale-backend
-    runtime: node
+    name: agenda-vocale-frontend
+    runtime: static
     plan: free
-    buildCommand: npm install
-    startCommand: npm start
+    buildCommand: npm install && npm run generate
+    staticPublishPath: .output/public
     envVars:
-      - key: NODE_ENV
-        value: production
-      - key: PORT
-        value: 10000
-      - key: MONGODB_URI
-        sync: false
-      - key: JWT_SECRET
-        generateValue: true
-      - key: CORS_ORIGIN
-        value: https://agenda-vocale-smart.onrender.com
-    healthCheckPath: /api/health
+      - key: NODE_VERSION
+        value: 20
+      - key: NUXT_PUBLIC_API_BASE
+        value: https://agenda-vocale-backend.onrender.com
