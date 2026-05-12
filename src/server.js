@@ -30,6 +30,14 @@ app.use(
   }),
 );
 
+app.get("/", (_req, res) => {
+  res.json({
+    ok: true,
+    name: "agenda-vocale-backend",
+    endpoints: ["/api/health"],
+  });
+});
+
 app.get("/api/health", (_req, res) => {
   res.json({
     ok: true,
