@@ -11,15 +11,9 @@ services:
       - key: PORT
         value: 10000
       - key: MONGODB_URI
-        sync: false  # Da configurare su Render.com
+        value: mongodb+srv://fermicarlo38_db_user:MdIHhOkMz6MMbz8k@cluster0.xitv3ti.mongodb.net/agenda_vocale_smart?retryWrites=true&w=majority&appName=Cluster0
       - key: JWT_SECRET
         generateValue: true
       - key: CORS_ORIGIN
-        value: https://agenda-vocale-frontend.onrender.com  # Aggiornare dopo deploy frontend
-      - key: VAPID_PUBLIC_KEY
-        sync: false
-      - key: VAPID_PRIVATE_KEY
-        sync: false
-      - key: OPENAI_API_KEY
-        sync: false
+        value: https://agenda-vocale-smart.onrender.com
     healthCheckPath: /api/health
