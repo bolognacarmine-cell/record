@@ -11,7 +11,7 @@ services:
       - key: PORT
         value: 10000
       - key: MONGODB_URI
-        value: mongodb+srv://fermicarlo38_db_user:MdIHhOkMz6MMbz8k@cluster0.xitv3ti.mongodb.net/agenda_vocale_smart?retryWrites=true&w=majority&appName=Cluster0
+        sync: false
       - key: JWT_SECRET
         generateValue: true
       - key: CORS_ORIGIN
